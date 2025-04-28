@@ -51,7 +51,7 @@ export default {
 		const responseStream = await env.AI.run('@cf/meta/llama-2-7b-chat-int8', {
 			stream: true,
 			messages: parsedData.data.messages,
-			max_tokens: 512,
+			max_tokens: 1024,
 		});
 		return new Response(responseStream as ReadableStream, {
 			headers: { 'content-type': 'text/event-stream' },
